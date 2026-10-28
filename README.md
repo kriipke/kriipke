@@ -2,8 +2,8 @@
 
 <p align="center">
   <a href="spencersmolen.com">Website</a> •
-  <a href="https://twitter.com/">Twitter</a> •
   <a href="https://linkedin.com/in/spencer-smolen">LinkedIn</a> •
+  <a href="https://medium.com/@spencersmolen">Medium</a> •
   <a href="https://github.com/kriipke">GitHub</a>
 </p>
 
