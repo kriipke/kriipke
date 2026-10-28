@@ -1,107 +1,53 @@
-# Spencer Smolen 👋
+<div align="center">
 
-**Senior DevOps / Platform Engineer · Kubernetes delivery and developer platforms**
+# Hey, I'm Spencer 👋
 
-I design Kubernetes delivery workflows, infrastructure automation, and self-service interfaces for platform operations. My work connects application configuration to the systems around it: release promotion, alerting, secrets, and service dependencies.
+**Platform Engineer · Senior DevOps Engineer · Linux enthusiast**
 
+I build the tools that turn **“can someone from DevOps do this?”** into a workflow, a self-service interface, or—ideally—something nobody has to think about again.
 
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://github.com/kriipke/cookiecutter-gitops-multirepo)
-[![Go](https://img.shields.io/badge/Go-007D9C?style=for-the-badge&logo=go&logoColor=white)](https://github.com/kriipke/chartpress)
-[![Helm](https://img.shields.io/badge/Helm-0F1689?style=for-the-badge&logo=helm&logoColor=white)](https://github.com/kriipke/chartpress)
-[![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white)](https://spencersmolen.com/articles/new-relic-as-the-interface-terraform-as-the-engine/)
-[![Argo CD](https://img.shields.io/badge/Argo_CD-EF7B4D?style=for-the-badge&logo=argo&logoColor=111827)](https://github.com/kriipke/cookiecutter-gitops-multirepo)
-[![Vault](https://img.shields.io/badge/Vault-FFEC6E?style=for-the-badge&logo=vault&logoColor=111827)](https://github.com/kriipke/vaultsync)
+[Website](https://spencersmolen.com/) · [Articles](https://spencersmolen.com/articles/) · [LinkedIn](https://linkedin.com/in/spencer-smolen) · [Email](mailto:mail@spencersmolen.com)
 
-## 🛠️ Engineering in practice
+</div>
 
-### [Self-service observability with New Relic and Terraform](https://spencersmolen.com/articles/new-relic-as-the-interface-terraform-as-the-engine/)
+---
 
-At Scientific Games, I worked on an observability platform where routine alert adjustments required a DevOps engineer to edit Terraform. We used New Relic entity tags as the administrator interface, Terraform to interpret supported overrides, and GitHub Actions for hourly reconciliation. The implementation generated more than 360 alert conditions and let designated administrators adjust supported thresholds without an engineer editing Terraform for each change.
+### About Me
 
-The write-up covers the ownership boundary between administrator configuration and implementation code, invalid-input handling, and the tradeoff between scheduled reconciliation and immediate feedback.
+My corner of engineering is where **Kubernetes, GitOps, release automation, and developer experience** meet. I like well-defined interfaces, boring deployments, and systems that explain *why* something broke—not just that it broke.
 
-<details>
-<summary>🔎 Open the observability workflow</summary>
+> The best platform feature might be the ticket nobody has to open.
 
-```mermaid
-flowchart TD
-    admin["🧑‍💻 Administrator adjusts entity tags"] --> tags["New Relic configuration"]
-    schedule["⏱️ Hourly GitHub Actions run"] --> tf["Terraform reconciliation"]
-    tags -->|"Read through NerdGraph"| tf
-    code["📦 Implementation code in Git"] --> tf
-    tf -->|"Apply supported defaults and overrides"| alerts["🔔 Managed alert conditions"]
-    classDef input fill:#DBEAFE,stroke:#2563EB,color:#172554
-    classDef engine fill:#EDE9FE,stroke:#7C3AED,color:#2E1065
-    classDef result fill:#D1FAE5,stroke:#059669,color:#064E3B
-    class admin,tags,code input
-    class schedule,tf engine
-    class alerts result
-```
+### Things I've built
 
-</details>
+| Project | The problem it tackles |
+| --- | --- |
+| 🚀 **[Chartpress](https://github.com/kriipke/chartpress)** · [Live](https://chartpress.dev/) | Generate umbrella Helm charts and workload-specific subcharts from one config. Go CLI, HTTP API, web wizard, and Kubernetes operator. |
+| 🌱 **[GitOps multirepo template](https://github.com/kriipke/cookiecutter-gitops-multirepo)** | Scaffold Argo CD ApplicationSets, per-cluster Helm values, bootstrap configuration, and promotion workflows for dev/stage/prod. |
+| 🔐 **[VaultSync](https://github.com/kriipke/vaultsync)** | Work with Vault KV v2 secrets as local YAML, with pull/push, HCP namespace support, and dry-run diffs before writing. **Exports contain secrets; handle accordingly.** |
+| 🔎 **[DriftMap](https://github.com/kriipke/driftmap)** | Compare YAML files, directories, or Git refs to review configuration differences without manually diffing environment files. |
+| 🕸️ **[platform-knowledge-graph](https://github.com/kriipke/platform-knowledge-graph)** | Extract platform facts from Kubernetes, Argo CD, GitHub, Terraform, Vault, and Istio into an RDF graph you can query across tool boundaries. |
 
-### [Diagnosing failures across application and Istio boundaries](https://spencersmolen.com/articles/application-performance-tuning-with-istio/)
+**Currently exploring:** [platformctl](https://github.com/kriipke/platformctl), an evidence-oriented GitOps troubleshooting interface backed by Go services, PostgreSQL, and RabbitMQ. It's still a work in progress; some integration checks are simulated.
 
-I describe an incident where increasing a mesh timeout did not resolve HTTP 503 errors: an application client was timing out first, while retries amplified downstream load. We coordinated application and mesh deadlines, tuned retries and connection-pool limits, tested under load, and moved the resulting configuration into shared Helm charts.
+### Technical Blog Posts
 
-## 🚀 Kubernetes delivery
+Most of my articles start with a real engineering question and end with something you can use:
 
-### [GitOps repository template](https://github.com/kriipke/cookiecutter-gitops-multirepo)
+- **[The Queryable Platform](https://spencersmolen.com/articles/platform-knowledge-graph-part-1/)** — A four-part series on infrastructure graphs, blast-radius queries, and giving AI agents grounded platform context.
+- **[New Relic as the Interface, Terraform as the Engine](https://spencersmolen.com/articles/new-relic-as-the-interface-terraform-as-the-engine/)** — Self-service configuration without handing everyone a Terraform repo.
+- **[Application Performance Tuning with Istio](https://spencersmolen.com/articles/application-performance-tuning-with-istio/)** — Why retries and timeouts can turn a slow dependency into a cascading failure.
+- **[Your Helm Chart Is Really an Abstract Syntax Tree](https://spencersmolen.com/articles/application-driven-infrastructure-part-4/)** — Thinking about platform configuration as a compiler problem.
 
-A starting point for Argo CD delivery across development, staging, and production clusters. Application charts live in a separate repository from ApplicationSets and per-cluster values, allowing chart versions and environment configuration to be managed independently.
+**[Browse all articles →](https://spencersmolen.com/articles/)**
 
-Development tracks the chart repository's main branch; staging and production pin release tags. The template includes render checks and promotion workflows. These choices make the release progression explicit in Git while retaining environment-specific configuration.
+### The toolbox
 
-### [Chartpress](https://github.com/kriipke/chartpress)
+`Go` · `Python` · `Bash` · `Kubernetes` · `Helm` · `Argo CD` · `Istio` · `Terraform` · `Ansible` · `Vault` · `AWS` · `GitHub Actions` · `GitLab CI` · `New Relic` · `Prometheus` · `Grafana`
 
-A Go tool for generating umbrella Helm charts and subcharts from one configuration, with support for Deployments, StatefulSets, and DaemonSets. It exposes generation through a CLI, HTTP API, and web interface.
+---
 
-The service uses a Kubernetes custom resource and operator for asynchronous generation, with status reporting and archives in object storage. Its verification gate covers Go tests and vet, frontend tests and builds, Helm lint, generated templates, and archive validation.
+I'm interested in **Platform Engineer** and **Senior DevOps Engineer** opportunities where I can make delivery safer, reduce operational friction, and give developers better tools.
 
-## 🔐 Configuration review and secrets tooling
+**[Let's talk](mailto:mail@spencersmolen.com)** · [See more repositories](https://github.com/kriipke?tab=repositories)
 
-- **[VaultSync](https://github.com/kriipke/vaultsync):** A CLI and Go library for moving Vault KV v2 secrets between Vault and local YAML files, including HCP Vault namespaces. Dry-run diffs let an operator inspect proposed writes. Local exports contain secret values and require appropriate handling.
-- **[DriftMap](https://github.com/kriipke/driftmap):** Compares YAML files, directories, or Git refs and reports changed, added, and removed values. Useful for reviewing Helm configuration and VaultSync exports; it compares configuration snapshots rather than observing live cluster state.
-
-## 🧰 Developer environments
-
-**[Provii](https://github.com/kriipke/provii)** installs precompiled command-line tools using Bash recipes that select release assets by operating system, architecture, and Linux libc. Installation smoke tests cover selected tools on Linux and macOS.
-
-## ✍️ Architecture writing
-
-- **[Application-Driven Infrastructure](https://spencersmolen.com/articles/application-driven-infrastructure-part-1/):** Using application metadata to generate related operational artifacts, with an explicit lifecycle boundary that keeps shared infrastructure independently managed.
-- **[The Queryable Platform](https://spencersmolen.com/articles/platform-knowledge-graph-part-1/):** A series on combining infrastructure facts into a queryable model of ownership and topology. It explores impact analysis while identifying missing dependency extraction needed to support it.
-
-[All articles](https://spencersmolen.com/articles/)
-
-## 🗺️ A map of my work
-
-A thematic map of the projects and writing above.
-
-```mermaid
-flowchart TD
-    platform["⚙️ Platform engineering"]
-    platform --- delivery["🚀 Delivery"]
-    platform --- operations["🔎 Operations"]
-    platform --- experience["🧰 Developer experience"]
-    delivery --- gitops["GitOps repository template"]
-    delivery --- charts["Chartpress"]
-    operations --- observability["Self-service observability"]
-    operations --- config["VaultSync + DriftMap"]
-    experience --- tools["Provii"]
-    experience --- knowledge["Architecture writing"]
-    classDef root fill:#0F172A,stroke:#38BDF8,color:#F8FAFC
-    classDef blue fill:#DBEAFE,stroke:#2563EB,color:#172554
-    classDef violet fill:#EDE9FE,stroke:#7C3AED,color:#2E1065
-    classDef green fill:#D1FAE5,stroke:#059669,color:#064E3B
-    class platform root
-    class delivery,gitops,charts blue
-    class operations,observability,config violet
-    class experience,tools,knowledge green
-```
-
-## 🤝 Connect
-
-I'm open to senior DevOps and platform engineering roles focused on Kubernetes delivery, infrastructure automation, and developer experience.
-
-[Email](mailto:mail@spencersmolen.com) · [LinkedIn](https://linkedin.com/in/spencer-smolen) · [Website](https://spencersmolen.com/) · [More projects](https://github.com/kriipke?tab=repositories)
