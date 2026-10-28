@@ -1,4 +1,4 @@
-<h3 align="center">👋 Hi there, I'm Spencer Smolen</h3>
+<h3 align="center">👋 Hi there, I'm Spencer</h3>
 
 <p align="center">
   <a href="spencersmolen.com">Website</a> •
