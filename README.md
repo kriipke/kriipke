@@ -1,18 +1,17 @@
-<div align="center">
+<h3 align="center">👋 Hi there, I'm Spencer Smolen</h3>
 
-# Hey, I'm Spencer 👋
-
-**Platform Engineer · Senior DevOps Engineer · Linux enthusiast**
-
-[Website](https://spencersmolen.com/) · [Articles](https://spencersmolen.com/articles/) · [LinkedIn](https://linkedin.com/in/spencer-smolen) · [Email](mailto:mail@spencersmolen.com)
-
-</div>
+<p align="center">
+  <a href="spencersmolen.com">Website</a> •
+  <a href="https://twitter.com/">Twitter</a> •
+  <a href="https://linkedin.com/in/spencer-smolen">LinkedIn</a> •
+  <a href="https://github.com/kriipke">GitHub</a>
+</p>
 
 ---
 
-### About Me
+I'm a passionate Senior DevOps Engineer with over 6 years of experience, specializing in cloud infrastructure and Linux systems. With a knack for transforming operational reliability and boosting developer productivity through automation and GitOps, I've spent more than 3 years architecting and maintaining Kubernetes platforms across AWS and hybrid environments.
 
-My corner of engineering is where **Kubernetes, GitOps, release automation, and developer experience** meet. I like well-defined interfaces, boring deployments, and systems that explain *why* something broke—not just that it broke.
+---
 
 ### Things I've built
 
@@ -24,11 +23,7 @@ My corner of engineering is where **Kubernetes, GitOps, release automation, and 
 | 🔎 **[DriftMap](https://github.com/kriipke/driftmap)** | Compare YAML files, directories, or Git refs to review configuration differences without manually diffing environment files. |
 | 🕸️ **[platform-knowledge-graph](https://github.com/kriipke/platform-knowledge-graph)** | Extract platform facts from Kubernetes, Argo CD, GitHub, Terraform, Vault, and Istio into an RDF graph you can query across tool boundaries. |
 
-**Currently exploring:** [platformctl](https://github.com/kriipke/platformctl), an evidence-oriented GitOps troubleshooting interface backed by Go services, PostgreSQL, and RabbitMQ. It's still a work in progress; some integration checks are simulated.
-
-### Technical Blog Posts
-
-Most of my articles start with a real engineering question and end with something you can use:
+### Writing
 
 - **[The Queryable Platform](https://spencersmolen.com/articles/platform-knowledge-graph-part-1/)** — A four-part series on infrastructure graphs, blast-radius queries, and giving AI agents grounded platform context.
 - **[New Relic as the Interface, Terraform as the Engine](https://spencersmolen.com/articles/new-relic-as-the-interface-terraform-as-the-engine/)** — Self-service configuration without handing everyone a Terraform repo.
